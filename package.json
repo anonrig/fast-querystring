@@ -1,0 +1,28 @@
+{
+  "name": "fast-querystring",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "format": "rome format . --indent-style space --write",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage",
+    "benchmark": "node test/benchmark.mjs"
+  },
+  "keywords": ["querystring", "qs", "parser"],
+  "author": "Yagiz Nizipli <yagiz@nizipli.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cronometro": "^1.1.2",
+    "qs": "^6.11.0",
+    "rome": "0.8.0-next.ff4153b",
+    "url-state-machine": "^0.5.1",
+    "vitest": "^0.22.1"
+  },
+  "repository": {
+    "url": "git+https://github.com/anonrig/fast-querystring.git",
+    "type": "git"
+  }
+}
