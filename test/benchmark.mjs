@@ -8,7 +8,7 @@ import queryString from "query-string";
 await benchmark(
   {
     URLStateMachine() {
-      return new URLStateMachine("hello=world&foo=bar", null, null, 115);
+      return new URLStateMachine("hello=world&foo=bar", undefined, null, 115);
     },
     qs() {
       return qs.parse("hello=world&foo=bar");
