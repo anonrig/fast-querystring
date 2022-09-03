@@ -3,6 +3,7 @@ import URLStateMachine from "url-state-machine";
 import qs from "qs";
 import fastQueryString from "../lib/index.js";
 import native from "node:querystring";
+import queryString from "query-string";
 
 await benchmark(
   {
@@ -15,8 +16,11 @@ await benchmark(
     "fast-querystring"() {
       return fastQueryString.parse("hello=world&foo=bar");
     },
-    "native-querystring"() {
+    "node:querystring"() {
       return native.parse("hello=world&foo=bar");
+    },
+    "query-string"() {
+      return queryString.parse("hello=world&foo=bar");
     },
   },
   { warmup: true, print: { compare: true, compareMode: "previous" } },
