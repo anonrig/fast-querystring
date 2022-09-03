@@ -24,7 +24,6 @@
     "qs": "^6.11.0",
     "query-string": "^7.1.1",
     "rome": "0.8.0-next.ff4153b",
-    "url-state-machine": "^0.5.1",
     "vitest": "^0.22.1"
   },
   "repository": {

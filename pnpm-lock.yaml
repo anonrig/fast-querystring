@@ -6,7 +6,6 @@ specifiers:
   qs: ^6.11.0
   query-string: ^7.1.1
   rome: 0.8.0-next.ff4153b
-  url-state-machine: ^0.5.1
   vitest: ^0.22.1
 
 devDependencies:
@@ -15,7 +14,6 @@ devDependencies:
   qs: 6.11.0
   query-string: 7.1.1
   rome: 0.8.0-next.ff4153b
-  url-state-machine: 0.5.1
   vitest: 0.22.1
 
 packages:
@@ -679,10 +677,6 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
-    dev: true
-
-  /url-state-machine/0.5.1:
-    resolution: {integrity: sha512-gZaMeaKFyahIKqHS2W0s1U91V3VliRV3jXWfWa/9CtTIhEPHLKQviFMCObZRxoyRCfalKcNE4fhfOL9POKStuA==}
     dev: true
 
   /vite/3.0.9:
