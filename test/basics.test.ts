@@ -29,3 +29,16 @@ test("should parse the basics", () => {
 test("should throw error on invalid type", () => {
   assert.throws(() => qs.parse(5), "Invalid Input");
 });
+
+test("handles & on first/last character", () => {
+  assert.deepEqual(qs.parse("&hello=world"), { hello: "world" });
+  assert.deepEqual(qs.parse("hello=world&"), { hello: "world" });
+});
+
+test("handles ? on first character", () => {
+  assert.deepEqual(qs.parse("?hello=world"), { hello: "world" });
+});
+
+test("removes fragment from string", () => {
+  assert.deepEqual(qs.parse("foo=bar#hello"), { foo: "bar" });
+});
