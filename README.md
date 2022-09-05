@@ -12,12 +12,13 @@ npm i --save fast-querystring
 
 - Parsed object does not have prototype methods
 - Uses `&` separator as default
-- Supports only UTF-8
 - Supports only input of type `string`
-- Key & value with length 0 is omitted by default
-  - `foo=bar&hey` parses into `{foo: 'bar'}`
 - Supports repeating keys in query string
   - `foo=bar&foo=baz` parses into `{foo: ['bar', 'baz']}`
+
+### Differences
+- Key & value with length 0 is omitted by default
+  - `foo=bar&hey` parses into `{foo: 'bar'}`, but `node:querystring` returns `{foo: 'bar', hey: ''}`
 
 ### Usage
 
