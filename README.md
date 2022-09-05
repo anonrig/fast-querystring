@@ -8,6 +8,18 @@ Fast query-string parser to replace the deprecated `node:querystring` parse func
 npm i --save fast-querystring
 ```
 
+### Features
+
+- Uses `&` separator as default
+- Removes fragment from string
+  - `foo=bar#hello=world` parses into `{foo: 'bar'}`
+- Supports only UTF-8
+- Supports only input of type `string`
+- Key & value with length 0 is omitted by default
+  - `foo=bar&hey` parses into `{foo: 'bar'}`
+- Supports repeating keys in query string
+  - `foo=bar&foo=baz` parses into `{foo: ['bar', 'baz']}`
+
 ### Usage
 
 ```javascript
