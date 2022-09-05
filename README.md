@@ -16,10 +16,6 @@ npm i --save fast-querystring
 - Supports repeating keys in query string
   - `foo=bar&foo=baz` parses into `{foo: ['bar', 'baz']}`
 
-### Differences
-- Key & value with length 0 is omitted by default
-  - `foo=bar&hey` parses into `{foo: 'bar'}`, but `node:querystring` returns `{foo: 'bar', hey: ''}`
-
 ### Usage
 
 ```javascript
