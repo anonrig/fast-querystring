@@ -7,16 +7,19 @@ import queryString from "query-string";
 await benchmark(
   {
     qs() {
-      return qs.parse("hello=world&foo=bar");
+      return qs.parse("frappucino=muffin&goat%5B%5D=scone&pond=moose");
     },
     "fast-querystring"() {
-      return fastQueryString.parse("hello=world&foo=bar");
+      return fastQueryString.parse("frappucino=muffin&goat%5B%5D=scone&pond=moose");
     },
     "node:querystring"() {
-      return native.parse("hello=world&foo=bar");
+      return native.parse("frappucino=muffin&goat%5B%5D=scone&pond=moose");
     },
     "query-string"() {
-      return queryString.parse("hello=world&foo=bar");
+      return queryString.parse("frappucino=muffin&goat%5B%5D=scone&pond=moose");
+    },
+    URLSearchParams() {
+      return new URLSearchParams("frappucino=muffin&goat%5B%5D=scone&pond=moose");
     },
   },
   { warmup: true, print: { compare: true, compareMode: "previous" } },
