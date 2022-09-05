@@ -10,6 +10,7 @@ npm i --save fast-querystring
 
 ### Features
 
+- Parsed object does not have prototype methods
 - Uses `&` separator as default
 - Removes fragment from string
   - `foo=bar#hello=world` parses into `{foo: 'bar'}`
