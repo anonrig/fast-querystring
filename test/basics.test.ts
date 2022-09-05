@@ -25,3 +25,7 @@ test("should parse the basics", () => {
     assert.deepEqual(qs.parse(t[0]), t[1]);
   });
 });
+
+test("should throw error on invalid type", () => {
+  assert.throws(() => qs.parse(5), "Invalid Input");
+});
