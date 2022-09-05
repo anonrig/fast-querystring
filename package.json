@@ -30,5 +30,8 @@
   "repository": {
     "url": "git+https://github.com/anonrig/fast-querystring.git",
     "type": "git"
+  },
+  "dependencies": {
+    "fast-decode-uri-component": "^1.0.1"
   }
 }
