@@ -45,3 +45,8 @@ test("handles + character", () => {
     author: "Yagiz Nizipli",
   });
 });
+
+test("should accept pairs with missing values", () => {
+  assert.deepEqual(qs.parse("foo=bar&hey"), { foo: "bar", hey: "" });
+  assert.deepEqual(qs.parse("hey"), { hey: "" });
+});
