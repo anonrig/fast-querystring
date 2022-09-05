@@ -15,6 +15,8 @@ npm i --save fast-querystring
 - Supports only input of type `string`
 - Supports repeating keys in query string
   - `foo=bar&foo=baz` parses into `{foo: ['bar', 'baz']}`
+- Supports pairs with missing values
+  - `foo=bar&hola` parses into `{foo: 'bar', hola: ''}`
 
 ### Usage
 
