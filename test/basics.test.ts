@@ -36,9 +36,12 @@ test("handles & on first/last character", () => {
 });
 
 test("handles ? on first character", () => {
-  assert.deepEqual(qs.parse("?hello=world"), { hello: "world" });
+  // This aligns with `node:querystring` functionality
+  assert.deepEqual(qs.parse("?hello=world"), { "?hello": "world" });
 });
 
-test("removes fragment from string", () => {
-  assert.deepEqual(qs.parse("foo=bar#hello"), { foo: "bar" });
+test("handles + character", () => {
+  assert.deepEqual(qs.parse("author=Yagiz+Nizipli"), {
+    author: "Yagiz Nizipli",
+  });
 });
