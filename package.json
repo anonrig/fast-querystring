@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "format": "rome format . --indent-style space --write",
-    "format:ci": "rome format . --indent-style space",
+    "format:ci": "rome ci . --indent-style space",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage",
