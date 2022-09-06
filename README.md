@@ -48,17 +48,17 @@ console.log(qs.stringify({ foo: ['bar', 'baz'] }))
 ╔═════════════════════════════════════════╤═════════╤═══════════════════╤═══════════╗
 ║ Slower tests                            │ Samples │            Result │ Tolerance ║
 ╟─────────────────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ qs                                      │   10000 │  316071.64 op/sec │  ± 1.29 % ║
-║ query-string                            │   10000 │  334619.39 op/sec │  ± 1.43 % ║
-║ querystringify                          │   10000 │  448353.77 op/sec │  ± 1.42 % ║
-║ @aws-sdk/querystring-parser             │    1000 │  480685.11 op/sec │  ± 0.78 % ║
-║ URLSearchParams-with-Object.fromEntries │   10000 │  833241.61 op/sec │  ± 2.97 % ║
-║ URLSearchParams-with-construct          │   10000 │ 1184116.36 op/sec │  ± 4.50 % ║
-║ node:querystring                        │    3000 │ 1435004.35 op/sec │  ± 0.93 % ║
+║ qs                                      │   10000 │  314822.82 op/sec │  ± 1.12 % ║
+║ query-string                            │    1000 │  330364.46 op/sec │  ± 0.89 % ║
+║ querystringify                          │   10000 │  442352.24 op/sec │  ± 1.31 % ║
+║ @aws-sdk/querystring-parser             │   10000 │  471561.65 op/sec │  ± 1.12 % ║
+║ URLSearchParams-with-Object.fromEntries │   10000 │  865453.19 op/sec │  ± 2.29 % ║
+║ URLSearchParams-with-construct          │   10000 │ 1234031.63 op/sec │  ± 3.12 % ║
+║ node:querystring                        │   10000 │ 1484397.94 op/sec │  ± 2.46 % ║
 ╟─────────────────────────────────────────┼─────────┼───────────────────┼───────────╢
 ║ Fastest test                            │ Samples │            Result │ Tolerance ║
 ╟─────────────────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ fast-querystring                        │   10000 │ 1706108.77 op/sec │  ± 4.66 % ║
+║ fast-querystring                        │   10000 │ 1798615.82 op/sec │  ± 2.65 % ║
 ╚═════════════════════════════════════════╧═════════╧═══════════════════╧═══════════╝
 ```
 
