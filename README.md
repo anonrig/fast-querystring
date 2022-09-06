@@ -5,7 +5,7 @@ Fast query-string parser to replace the legacy `node:querystring` parse function
 ### Installation
 
 ```
-npm i --save fast-querystring
+npm i fast-querystring
 ```
 
 ### Features
