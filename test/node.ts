@@ -1,5 +1,3 @@
-import qs from "../lib";
-import { test, assert } from "vitest";
 import vm from "node:vm";
 
 function createWithNoPrototype(properties) {
@@ -9,9 +7,8 @@ function createWithNoPrototype(properties) {
   });
   return noProto;
 }
-
-const foreignObject = vm.runInNewContext('({"foo": ["bar", "baz"]})');
-const qsNoMungeTestCases = [
+export const foreignObject = vm.runInNewContext('({"foo": ["bar", "baz"]})');
+export const qsNoMungeTestCases = [
   ["", {}],
   ["foo=bar&foo=baz", { foo: ["bar", "baz"] }],
   ["foo=bar&foo=baz", foreignObject],
@@ -27,7 +24,7 @@ const qsNoMungeTestCases = [
   ],
   ["trololol=yes&lololo=no", { trololol: "yes", lololo: "no" }],
 ];
-const qsTestCases = [
+export const qsTestCases = [
   [
     "__proto__=1",
     "__proto__=1",
@@ -115,36 +112,3 @@ const qsTestCases = [
   [null, "", {}],
   [undefined, "", {}],
 ];
-
-test("should parse the basics", () => {
-  qsNoMungeTestCases.forEach((t) => {
-    assert.deepEqual(qs.parse(t[0]), t[1]);
-  });
-});
-
-test("should succeed on node.js tests", () => {
-  qsTestCases.forEach((t) => {
-    assert.deepEqual(qs.parse(t[0]), t[2], t[0]);
-  });
-});
-
-test("handles & on first/last character", () => {
-  assert.deepEqual(qs.parse("&hello=world"), { hello: "world" });
-  assert.deepEqual(qs.parse("hello=world&"), { hello: "world" });
-});
-
-test("handles ? on first character", () => {
-  // This aligns with `node:querystring` functionality
-  assert.deepEqual(qs.parse("?hello=world"), { "?hello": "world" });
-});
-
-test("handles + character", () => {
-  assert.deepEqual(qs.parse("author=Yagiz+Nizipli"), {
-    author: "Yagiz Nizipli",
-  });
-});
-
-test("should accept pairs with missing values", () => {
-  assert.deepEqual(qs.parse("foo=bar&hey"), { foo: "bar", hey: "" });
-  assert.deepEqual(qs.parse("hey"), { hey: "" });
-});
