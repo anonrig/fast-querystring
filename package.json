@@ -8,8 +8,8 @@
     "node": ">= 15.0.0"
   },
   "scripts": {
-    "format": "rome format . --indent-style space --write",
-    "format:ci": "rome ci . --indent-style space",
+    "format": "rome format . --write",
+    "format:ci": "rome format .",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage",
@@ -24,12 +24,12 @@
   "author": "Yagiz Nizipli <yagiz@nizipli.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.7.14",
+    "@types/node": "^18.7.15",
     "cronometro": "^1.1.2",
     "qs": "^6.11.0",
     "query-string": "^7.1.1",
-    "rome": "0.8.0-next.ff4153b",
-    "vitest": "^0.22.1"
+    "rome": "0.9.0-next",
+    "vitest": "^0.23.1"
   },
   "repository": {
     "url": "git+https://github.com/anonrig/fast-querystring.git",
