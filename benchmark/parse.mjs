@@ -6,38 +6,28 @@ import queryString from "query-string";
 import querystringify from "querystringify";
 import awsQueryStringParser from "@aws-sdk/querystring-parser";
 
+const input = "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz";
+
 await benchmark(
   {
     qs() {
-      return qs.parse(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      return qs.parse(input);
     },
     "fast-querystring"() {
-      return fastQueryString.parse(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      return fastQueryString.parse(input);
     },
     "node:querystring"() {
-      return native.parse(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      return native.parse(input);
     },
     "query-string"() {
-      return queryString.parse(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      return queryString.parse(input);
     },
     "URLSearchParams-with-Object.fromEntries"() {
-      const urlParams = new URLSearchParams(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      const urlParams = new URLSearchParams(input);
       return Object.fromEntries(urlParams);
     },
     "URLSearchParams-with-construct"() {
-      const u = new URLSearchParams(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      const u = new URLSearchParams(input);
       const data = {};
       for (const [key, value] of u.entries()) {
         if (Array.isArray(data[key])) {
@@ -51,14 +41,10 @@ await benchmark(
       return data;
     },
     querystringify() {
-      return querystringify.parse(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      return querystringify.parse(input);
     },
     "@aws-sdk/querystring-parser"() {
-      return awsQueryStringParser.parseQueryString(
-        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
-      );
+      return awsQueryStringParser.parseQueryString(input);
     },
   },
   { warmup: true },
