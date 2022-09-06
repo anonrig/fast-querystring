@@ -6,6 +6,7 @@ specifiers:
   fast-decode-uri-component: ^1.0.1
   qs: ^6.11.0
   query-string: ^7.1.1
+  querystringify: ^2.2.0
   rome: 0.9.0-next
   vitest: ^0.23.1
 
@@ -17,6 +18,7 @@ devDependencies:
   cronometro: 1.1.2
   qs: 6.11.0
   query-string: 7.1.1
+  querystringify: 2.2.0
   rome: 0.9.0-next
   vitest: 0.23.1
 
@@ -588,6 +590,10 @@ packages:
       filter-obj: 1.1.0
       split-on-first: 1.1.0
       strict-uri-encode: 2.0.0
+    dev: true
+
+  /querystringify/2.2.0:
+    resolution: {integrity: sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==}
     dev: true
 
   /require-from-string/2.0.2:

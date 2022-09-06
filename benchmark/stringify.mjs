@@ -3,6 +3,7 @@ import qs from "qs";
 import fastQueryString from "../lib/index.js";
 import native from "node:querystring";
 import queryString from "query-string";
+import querystringify from "querystringify";
 
 const value = {
   frappucino: "muffin",
@@ -32,6 +33,9 @@ await benchmark(
       const urlParams = new URLSearchParams(value);
       return urlParams.toString();
     },
+    querystringify() {
+      return querystringify.stringify(value);
+    },
   },
-  { warmup: true, print: { compare: true, compareMode: "previous" } },
+  { warmup: true },
 );

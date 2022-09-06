@@ -3,6 +3,7 @@ import qs from "qs";
 import fastQueryString from "../lib/index.js";
 import native from "node:querystring";
 import queryString from "query-string";
+import querystringify from "querystringify";
 
 await benchmark(
   {
@@ -48,6 +49,11 @@ await benchmark(
       }
       return data;
     },
+    querystringify() {
+      return querystringify.parse(
+        "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
+      );
+    },
   },
-  { warmup: true, print: { compare: true, compareMode: "previous" } },
+  { warmup: true },
 );
