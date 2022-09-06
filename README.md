@@ -10,6 +10,7 @@ npm i fast-querystring
 
 ### Features
 
+- Supports both `parse` and `stringify` methods from `node:querystring` module
 - Parsed object does not have prototype methods
 - Uses `&` separator as default
 - Supports only input of type `string`
@@ -17,19 +18,24 @@ npm i fast-querystring
   - `foo=bar&foo=baz` parses into `{foo: ['bar', 'baz']}`
 - Supports pairs with missing values
   - `foo=bar&hola` parses into `{foo: 'bar', hola: ''}`
+- Stringify does not support nested values (just like `node:querystring`)
 
 ### Usage
 
 ```javascript
-const QueryString = require('fast-querystring')
-const qs = QueryString.parse('hello=world&foo=bar&values=v1&values=v2')
+const qs = require('fast-querystring')
 
-console.log(qs)
+// Parsing a querystring
+console.log(qs.parse('hello=world&foo=bar&values=v1&values=v2'))
 // {
 //   hello: 'world',
 //   foo: 'bar',
 //   values: ['v1', 'v2']
 // }
+
+// Stringifying an object
+console.log(qs.stringify({ foo: ['bar', 'baz'] }))
+// 'foo=bar&foo=baz'
 ```
 
 ### Benchmark
