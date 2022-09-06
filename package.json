@@ -27,6 +27,7 @@
     "@aws-sdk/querystring-parser": "^3.162.0",
     "@types/node": "^18.7.15",
     "cronometro": "^1.1.2",
+    "http-querystring-stringify": "^2.1.0",
     "qs": "^6.11.0",
     "query-string": "^7.1.1",
     "querystringify": "^2.2.0",

@@ -4,6 +4,7 @@ import fastQueryString from "../lib/index.js";
 import native from "node:querystring";
 import queryString from "query-string";
 import querystringify from "querystringify";
+import httpQuerystringStringify from "http-querystring-stringify";
 
 const value = {
   frappucino: "muffin",
@@ -35,6 +36,9 @@ await benchmark(
     },
     querystringify() {
       return querystringify.stringify(value);
+    },
+    "http-querystring-stringify"() {
+      return httpQuerystringStringify(value);
     },
   },
   { warmup: true },

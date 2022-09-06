@@ -55,7 +55,7 @@ await benchmark(
         "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
       );
     },
-    '@aws-sdk/querystring-parser'() {
+    "@aws-sdk/querystring-parser"() {
       return awsQueryStringParser.parseQueryString(
         "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz",
       );
