@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@aws-sdk/querystring-parser': ^3.162.0
   '@types/node': ^18.7.15
   cronometro: ^1.1.2
   fast-decode-uri-component: ^1.0.1
@@ -14,6 +15,7 @@ dependencies:
   fast-decode-uri-component: 1.0.1
 
 devDependencies:
+  '@aws-sdk/querystring-parser': 3.162.0
   '@types/node': 18.7.15
   cronometro: 1.1.2
   qs: 6.11.0
@@ -26,6 +28,19 @@ packages:
 
   /@assemblyscript/loader/0.19.23:
     resolution: {integrity: sha512-ulkCYfFbYj01ie1MDOyxv2F6SpRN1TOj7fQxbP07D6HmeR+gr2JLSmINKjga2emB+b1L2KGrFKBTc+e00p54nw==}
+    dev: true
+
+  /@aws-sdk/querystring-parser/3.162.0:
+    resolution: {integrity: sha512-0ccaGsR1O7e3BsprdYBMwGf8gmycTv1Dfz2EB5R6MiTqzcuQJ/lxpIcRh3jhUJaD1TPlUziyrBEAxtLka3HDDQ==}
+    engines: {node: '>= 12.0.0'}
+    dependencies:
+      '@aws-sdk/types': 3.162.0
+      tslib: 2.4.0
+    dev: true
+
+  /@aws-sdk/types/3.162.0:
+    resolution: {integrity: sha512-NBmuwVujH8fURDMvBHkHrYu/JAfG6Js/Bu0mC4o2Kdo5mRa3fD/N9kK0dEAxU1Rxp4wY2E++V9j2ZCw1KBGrSg==}
+    engines: {node: '>= 12.0.0'}
     dev: true
 
   /@esbuild/linux-loong64/0.14.54:
@@ -717,6 +732,10 @@ packages:
   /tinyspy/1.0.2:
     resolution: {integrity: sha512-bSGlgwLBYf7PnUsQ6WOc6SJ3pGOcd+d8AA6EUnLDDM0kWEstC1JIlSZA3UNliDXhd9ABoS7hiRBDCu+XP/sf1Q==}
     engines: {node: '>=14.0.0'}
+    dev: true
+
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
   /type-detect/4.0.8:
