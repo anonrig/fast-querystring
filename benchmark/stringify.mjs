@@ -8,7 +8,10 @@ const value = {
   frappucino: "muffin",
   goat: "scone",
   pond: "moose",
-  foo: ["bar", "baz"],
+  foo: ["bar", "baz", "bal"],
+  bool: true,
+  bigIntKey: BigInt(100),
+  numberKey: 256,
 };
 
 await benchmark(
