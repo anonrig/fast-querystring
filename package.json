@@ -4,6 +4,9 @@
   "description": "",
   "main": "lib/index.js",
   "type": "commonjs",
+  "engines": {
+    "node": ">= 15.0.0"
+  },
   "scripts": {
     "format": "rome format . --indent-style space --write",
     "format:ci": "rome ci . --indent-style space",
