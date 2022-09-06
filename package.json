@@ -13,7 +13,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage",
-    "benchmark": "node test/benchmark.mjs"
+    "benchmark": "node benchmark/parse.mjs"
   },
   "keywords": [
     "querystring",

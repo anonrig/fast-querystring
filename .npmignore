@@ -3,5 +3,6 @@ node_modules
 package-lock.json
 coverage
 test
+benchmark
 .idea
 .github
