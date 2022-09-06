@@ -70,15 +70,15 @@ console.log(qs.stringify({ foo: ['bar', 'baz'] }))
 ╔════════════════════════════╤═════════╤═══════════════════╤═══════════╗
 ║ Slower tests               │ Samples │            Result │ Tolerance ║
 ╟────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ query-string               │   10000 │  290850.12 op/sec │  ± 1.52 % ║
-║ qs                         │   10000 │  324324.45 op/sec │  ± 2.05 % ║
-║ http-querystring-stringify │   10000 │  481327.85 op/sec │  ± 1.77 % ║
-║ URLSearchParams            │   10000 │  538867.84 op/sec │  ± 3.93 % ║
-║ querystringify             │   10000 │  774992.18 op/sec │  ± 2.51 % ║
-║ node:querystring           │   10000 │ 1827458.66 op/sec │  ± 5.41 % ║
+║ query-string               │   10000 │  284130.63 op/sec │  ± 1.62 % ║
+║ qs                         │   10000 │  334799.48 op/sec │  ± 1.93 % ║
+║ http-querystring-stringify │   10000 │  482642.49 op/sec │  ± 1.72 % ║
+║ URLSearchParams            │   10000 │  587274.65 op/sec │  ± 1.88 % ║
+║ querystringify             │   10000 │  753960.35 op/sec │  ± 2.20 % ║
+║ node:querystring           │   10000 │ 1796993.95 op/sec │  ± 5.34 % ║
 ╟────────────────────────────┼─────────┼───────────────────┼───────────╢
 ║ Fastest test               │ Samples │            Result │ Tolerance ║
 ╟────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ fast-querystring           │   10000 │ 1881474.27 op/sec │  ± 4.78 % ║
+║ fast-querystring           │   10000 │ 2051022.89 op/sec │  ± 4.52 % ║
 ╚════════════════════════════╧═════════╧═══════════════════╧═══════════╝
 ```
