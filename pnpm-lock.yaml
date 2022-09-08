@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@aws-sdk/querystring-builder': ^3.162.0
   '@aws-sdk/querystring-parser': ^3.162.0
   '@types/node': ^18.7.15
   cronometro: ^1.1.2
@@ -9,6 +10,7 @@ specifiers:
   qs: ^6.11.0
   query-string: ^7.1.1
   querystringify: ^2.2.0
+  querystringparser: ^0.1.1
   rome: 0.9.1-next
   vitest: ^0.23.1
 
@@ -16,6 +18,7 @@ dependencies:
   fast-decode-uri-component: 1.0.1
 
 devDependencies:
+  '@aws-sdk/querystring-builder': 3.162.0
   '@aws-sdk/querystring-parser': 3.162.0
   '@types/node': 18.7.15
   cronometro: 1.1.2
@@ -23,6 +26,7 @@ devDependencies:
   qs: 6.11.0
   query-string: 7.1.1
   querystringify: 2.2.0
+  querystringparser: 0.1.1
   rome: 0.9.1-next
   vitest: 0.23.1
 
@@ -30,6 +34,15 @@ packages:
 
   /@assemblyscript/loader/0.19.23:
     resolution: {integrity: sha512-ulkCYfFbYj01ie1MDOyxv2F6SpRN1TOj7fQxbP07D6HmeR+gr2JLSmINKjga2emB+b1L2KGrFKBTc+e00p54nw==}
+    dev: true
+
+  /@aws-sdk/querystring-builder/3.162.0:
+    resolution: {integrity: sha512-3urwxCEpnQwa1B6fKmcr8R2Qmzr8VDttRSay5CgD/stbZ4XUzNsA6G1V36+EL1Vq4vMr1aZhriARioLDlhcz+g==}
+    engines: {node: '>= 12.0.0'}
+    dependencies:
+      '@aws-sdk/types': 3.162.0
+      '@aws-sdk/util-uri-escape': 3.55.0
+      tslib: 2.4.0
     dev: true
 
   /@aws-sdk/querystring-parser/3.162.0:
@@ -43,6 +56,13 @@ packages:
   /@aws-sdk/types/3.162.0:
     resolution: {integrity: sha512-NBmuwVujH8fURDMvBHkHrYu/JAfG6Js/Bu0mC4o2Kdo5mRa3fD/N9kK0dEAxU1Rxp4wY2E++V9j2ZCw1KBGrSg==}
     engines: {node: '>= 12.0.0'}
+    dev: true
+
+  /@aws-sdk/util-uri-escape/3.55.0:
+    resolution: {integrity: sha512-mmdDLUpFCN2nkfwlLdOM54lTD528GiGSPN1qb8XtGLgZsJUmg3uJSFIN2lPeSbEwJB3NFjVas/rnQC48i7mV8w==}
+    engines: {node: '>= 12.0.0'}
+    dependencies:
+      tslib: 2.4.0
     dev: true
 
   /@esbuild/linux-loong64/0.14.54:
@@ -615,6 +635,10 @@ packages:
 
   /querystringify/2.2.0:
     resolution: {integrity: sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==}
+    dev: true
+
+  /querystringparser/0.1.1:
+    resolution: {integrity: sha512-dvvDKF+ZuUd0N9DZ0C59TTt2/aztGfRrNzbn6SiqSQq/uwCKoMpLEMAb08DNd0ozbyhJfrrGJFWGLHeoL7ESag==}
     dev: true
 
   /require-from-string/2.0.2:

@@ -5,6 +5,7 @@ import native from "node:querystring";
 import queryString from "query-string";
 import querystringify from "querystringify";
 import awsQueryStringParser from "@aws-sdk/querystring-parser";
+import querystringparser from "querystringparser";
 
 const input = "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz";
 
@@ -45,6 +46,9 @@ await benchmark(
     },
     "@aws-sdk/querystring-parser"() {
       return awsQueryStringParser.parseQueryString(input);
+    },
+    querystringparser() {
+      return querystringparser.parse(input);
     },
   },
   { warmup: true },
