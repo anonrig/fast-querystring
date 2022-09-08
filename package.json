@@ -7,7 +7,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "format": "rome format . --write",
-    "format:ci": "rome format .",
+    "format:ci": "rome ci .",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage",
@@ -29,7 +29,7 @@
     "qs": "^6.11.0",
     "query-string": "^7.1.1",
     "querystringify": "^2.2.0",
-    "rome": "0.9.0-next",
+    "rome": "0.9.1-next",
     "vitest": "^0.23.1"
   },
   "repository": {
