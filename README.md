@@ -1,6 +1,6 @@
 # fast-querystring
 
-Fast query-string parser to replace the legacy `node:querystring` parse & stringify functions.
+Fast query-string parser and stringifier to replace the legacy `node:querystring` module.
 
 ### Installation
 
