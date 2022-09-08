@@ -5,6 +5,8 @@ import native from "node:querystring";
 import queryString from "query-string";
 import querystringify from "querystringify";
 import httpQuerystringStringify from "http-querystring-stringify";
+import awsQueryStringBuilder from "@aws-sdk/querystring-builder";
+import querystringparser from "querystringparser";
 
 const value = {
   frappucino: "muffin",
@@ -39,6 +41,12 @@ await benchmark(
     },
     "http-querystring-stringify"() {
       return httpQuerystringStringify(value);
+    },
+    "@aws-sdk/querystring-builder"() {
+      return awsQueryStringBuilder.buildQueryString(value);
+    },
+    querystringparser() {
+      return querystringparser.stringify(value);
     },
   },
   { warmup: true },
