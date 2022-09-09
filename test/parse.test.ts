@@ -3,16 +3,9 @@ import { test, assert } from "vitest";
 import { qsNoMungeTestCases, qsTestCases } from "./node";
 import querystring from "querystring";
 
-test("should parse the basics", () => {
-  qsNoMungeTestCases.forEach((t) => {
-    assert.deepEqual(qs.parse(t[0]), t[1]);
-  });
-});
-
 test("should succeed on node.js tests", () => {
-  qsTestCases.forEach((t) => {
-    assert.deepEqual(qs.parse(t[0]), t[2]);
-  });
+  qsNoMungeTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[1]));
+  qsTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[2]));
 });
 
 test("native querystring module should match the test suite result", () => {
