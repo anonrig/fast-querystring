@@ -54,3 +54,10 @@ test("should handle really large object", () => {
 
   assert.strictEqual(Object.keys(qs.parse(url)).length, 2000);
 });
+
+test("should parse large numbers", () => {
+  assert.strictEqual(
+    qs.parse("id=918854443121279438895193").id,
+    "918854443121279438895193",
+  );
+});
