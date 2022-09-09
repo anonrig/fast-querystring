@@ -10,6 +10,7 @@
     "format:ci": "rome ci .",
     "test": "vitest",
     "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
     "coverage": "vitest run --coverage",
     "benchmark:parse": "node benchmark/parse.mjs",
     "benchmark:stringify": "node benchmark/stringify.mjs"
@@ -25,6 +26,7 @@
     "@aws-sdk/querystring-builder": "^3.162.0",
     "@aws-sdk/querystring-parser": "^3.162.0",
     "@types/node": "^18.7.15",
+    "@vitest/coverage-c8": "^0.23.1",
     "cronometro": "^1.1.2",
     "http-querystring-stringify": "^2.1.0",
     "qs": "^6.11.0",
