@@ -48,3 +48,7 @@ test("should omit objects", () => {
 test("should omit non-object inputs", () => {
   assert.deepEqual(qs.stringify("hello" as any), "");
 });
+
+test("should handle multi-byte characters", () => {
+  assert.deepEqual(qs.stringify({ multiByte: "𝌆" }), "multiByte=%F0%9D%8C%86");
+});
