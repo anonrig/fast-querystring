@@ -41,6 +41,7 @@ test("should accept pairs with missing values", () => {
 });
 
 test("should decode key", () => {
+  assert.deepEqual(qs.parse("invalid%key=hello"), { "invalid%key": "hello" });
   assert.deepEqual(qs.parse("full%20name=Yagiz"), { "full name": "Yagiz" });
 });
 
