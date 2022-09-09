@@ -1,5 +1,8 @@
 import vm from "node:vm";
 
+function extendedFunction() {}
+extendedFunction.prototype = { a: "b" };
+
 function createWithNoPrototype(properties) {
   const noProto = Object.create(null);
   properties.forEach((property) => {
@@ -111,4 +114,21 @@ export const qsTestCases = [
   ["=%20+&", "=%20%20", { "": "  " }],
   [null, "", {}],
   [undefined, "", {}],
+];
+export const qsWeirdObjects = [
+  [{ regexp: /./g }, "regexp=", { regexp: "" }],
+  [{ regexp: new RegExp(".", "g") }, "regexp=", { regexp: "" }],
+  [{ fn: () => {} }, "fn=", { fn: "" }],
+  [{ fn: new Function("") }, "fn=", { fn: "" }],
+  [{ math: Math }, "math=", { math: "" }],
+  [{ e: extendedFunction }, "e=", { e: "" }],
+  [{ d: new Date() }, "d=", { d: "" }],
+  [{ d: Date }, "d=", { d: "" }],
+  [{ f: new Boolean(false), t: new Boolean(true) }, "f=&t=", { f: "", t: "" }],
+  [{ f: false, t: true }, "f=false&t=true", { f: "false", t: "true" }],
+  [{ n: null }, "n=", { n: "" }],
+  [{ nan: NaN }, "nan=", { nan: "" }],
+  [{ inf: Infinity }, "inf=", { inf: "" }],
+  [{ a: [], b: [] }, "", {}],
+  [{ a: 1, b: [] }, "a=1", { a: "1" }],
 ];
