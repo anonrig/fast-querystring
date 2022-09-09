@@ -1,9 +1,13 @@
 import qs from "../lib";
 import { test, assert } from "vitest";
-import { qsNoMungeTestCases, qsTestCases } from "./node";
+import { qsNoMungeTestCases, qsTestCases, qsWeirdObjects } from "./node";
 import querystring from "querystring";
 
 test("should succeed on node.js tests", () => {
+  qsWeirdObjects.forEach(
+    (t) =>
+      assert.deepEqual(qs.parse(t[1] as string), t[2] as Record<string, any>),
+  );
   qsNoMungeTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[1]));
   qsTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[2]));
 });
@@ -38,4 +42,14 @@ test("should accept pairs with missing values", () => {
 
 test("should decode key", () => {
   assert.deepEqual(qs.parse("full%20name=Yagiz"), { "full name": "Yagiz" });
+});
+
+test("should handle really large object", () => {
+  const query = {};
+
+  for (let i = 0; i < 2000; i++) query[i] = i;
+
+  const url = qs.stringify(query);
+
+  assert.strictEqual(Object.keys(qs.parse(url)).length, 2000);
 });
