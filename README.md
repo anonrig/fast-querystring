@@ -52,18 +52,18 @@ console.log(qs.stringify({ foo: ['bar', 'baz'] }))
 ╔═════════════════════════════════════════╤═════════╤═══════════════════╤═══════════╗
 ║ Slower tests                            │ Samples │            Result │ Tolerance ║
 ╟─────────────────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ qs                                      │   10000 │  310825.09 op/sec │  ± 1.29 % ║
-║ query-string                            │    1000 │  340059.83 op/sec │  ± 0.82 % ║
-║ querystringify                          │   10000 │  435456.34 op/sec │  ± 1.06 % ║
-║ @aws-sdk/querystring-parser             │    1000 │  451618.35 op/sec │  ± 0.85 % ║
-║ URLSearchParams-with-Object.fromEntries │   10000 │  876030.86 op/sec │  ± 1.78 % ║
-║ URLSearchParams-with-construct          │   10000 │ 1239366.24 op/sec │  ± 2.59 % ║
-║ node:querystring                        │   10000 │ 1442731.43 op/sec │  ± 2.95 % ║
-║ querystringparser                       │    3000 │ 1863385.29 op/sec │  ± 0.99 % ║
+║ qs                                      │   10000 │  350884.75 op/sec │  ± 1.36 % ║
+║ query-string                            │   10000 │  383165.31 op/sec │  ± 1.22 % ║
+║ querystringify                          │    1500 │  530280.43 op/sec │  ± 0.90 % ║
+║ @aws-sdk/querystring-parser             │    2000 │  556657.27 op/sec │  ± 0.79 % ║
+║ URLSearchParams-with-Object.fromEntries │   10000 │  845766.67 op/sec │  ± 2.85 % ║
+║ URLSearchParams-with-construct          │   10000 │ 1158368.83 op/sec │  ± 4.28 % ║
+║ node:querystring                        │    2000 │ 1460476.58 op/sec │  ± 0.96 % ║
+║ querystringparser                       │   10000 │ 1976384.97 op/sec │  ± 4.11 % ║
 ╟─────────────────────────────────────────┼─────────┼───────────────────┼───────────╢
 ║ Fastest test                            │ Samples │            Result │ Tolerance ║
 ╟─────────────────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ fast-querystring                        │   10000 │ 2086260.18 op/sec │  ± 3.18 % ║
+║ fast-querystring                        │   10000 │ 2123713.08 op/sec │  ± 2.87 % ║
 ╚═════════════════════════════════════════╧═════════╧═══════════════════╧═══════════╝
 ```
 
@@ -75,17 +75,17 @@ console.log(qs.stringify({ foo: ['bar', 'baz'] }))
 ╔══════════════════════════════╤═════════╤═══════════════════╤═══════════╗
 ║ Slower tests                 │ Samples │            Result │ Tolerance ║
 ╟──────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ query-string                 │   10000 │  294354.42 op/sec │  ± 1.25 % ║
-║ qs                           │   10000 │  349992.31 op/sec │  ± 1.45 % ║
-║ @aws-sdk/querystring-builder │   10000 │  380426.03 op/sec │  ± 1.69 % ║
-║ http-querystring-stringify   │   10000 │  489248.93 op/sec │  ± 1.54 % ║
-║ URLSearchParams              │   10000 │  579241.21 op/sec │  ± 1.92 % ║
-║ querystringparser            │    1500 │  667303.72 op/sec │  ± 0.77 % ║
-║ querystringify               │   10000 │  780283.61 op/sec │  ± 2.43 % ║
-║ node:querystring             │   10000 │ 1779241.34 op/sec │  ± 6.49 % ║
+║ query-string                 │   10000 │  310383.60 op/sec │  ± 1.14 % ║
+║ qs                           │   10000 │  354332.59 op/sec │  ± 1.23 % ║
+║ @aws-sdk/querystring-builder │   10000 │  411500.38 op/sec │  ± 1.30 % ║
+║ http-querystring-stringify   │    1500 │  535883.47 op/sec │  ± 1.00 % ║
+║ URLSearchParams              │   10000 │  594068.52 op/sec │  ± 1.61 % ║
+║ querystringparser            │   10000 │  766081.64 op/sec │  ± 2.18 % ║
+║ querystringify               │   10000 │  914083.38 op/sec │  ± 1.67 % ║
+║ node:querystring             │    4000 │ 1822536.85 op/sec │  ± 0.91 % ║
 ╟──────────────────────────────┼─────────┼───────────────────┼───────────╢
 ║ Fastest test                 │ Samples │            Result │ Tolerance ║
 ╟──────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ fast-querystring             │   10000 │ 2125769.45 op/sec │  ± 3.93 % ║
+║ fast-querystring             │   10000 │ 2186435.62 op/sec │  ± 3.48 % ║
 ╚══════════════════════════════╧═════════╧═══════════════════╧═══════════╝
 ```
