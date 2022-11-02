@@ -26,13 +26,13 @@
   "author": "Yagiz Nizipli <yagiz@nizipli.com>",
   "license": "MIT",
   "devDependencies": {
-    "@aws-sdk/querystring-builder": "^3.162.0",
-    "@aws-sdk/querystring-parser": "^3.162.0",
-    "@types/node": "^18.7.15",
-    "@vitest/coverage-c8": "^0.23.1",
+    "@aws-sdk/querystring-builder": "^3.201.0",
+    "@aws-sdk/querystring-parser": "^3.201.0",
+    "@types/node": "^18.11.9",
+    "@vitest/coverage-c8": "^0.23.4",
     "benchmark": "^2.1.4",
     "cli-select": "^1.1.2",
-    "cronometro": "^1.1.2",
+    "cronometro": "^1.1.4",
     "http-querystring-stringify": "^2.1.0",
     "qs": "^6.11.0",
     "query-string": "^7.1.1",
@@ -40,7 +40,7 @@
     "querystringparser": "^0.1.1",
     "rome": "0.9.1-next",
     "simple-git": "^3.14.1",
-    "vitest": "^0.23.1"
+    "vitest": "^0.23.4"
   },
   "repository": {
     "url": "git+https://github.com/anonrig/fast-querystring.git",
