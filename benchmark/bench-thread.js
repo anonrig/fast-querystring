@@ -29,6 +29,8 @@ switch (benchmark.type) {
     break;
 }
 
-suite.on("cycle", (event) => {
-  parentPort.postMessage(String(event.target));
-}).run();
+suite
+  .on("cycle", (event) => {
+    parentPort.postMessage(String(event.target));
+  })
+  .run();
