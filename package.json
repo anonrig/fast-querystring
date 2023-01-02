@@ -35,7 +35,7 @@
     "cronometro": "^1.1.4",
     "http-querystring-stringify": "^2.1.0",
     "qs": "^6.11.0",
-    "query-string": "^7.1.1",
+    "query-string": "^8.1.0",
     "querystringify": "^2.2.0",
     "querystringparser": "^0.1.1",
     "rome": "11.0.0",
