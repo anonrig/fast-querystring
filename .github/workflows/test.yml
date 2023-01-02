@@ -32,15 +32,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: pnpm/action-setup@v2.2.4
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: true
-
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
+        run: npm install --ignore-scripts
 
       - name: Test
-        run: pnpm test
+        run: npm test
