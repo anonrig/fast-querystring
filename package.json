@@ -38,7 +38,7 @@
     "query-string": "^7.1.1",
     "querystringify": "^2.2.0",
     "querystringparser": "^0.1.1",
-    "rome": "0.9.1-next",
+    "rome": "11.0.0",
     "simple-git": "^3.14.1",
     "vitest": "^0.23.4"
   },

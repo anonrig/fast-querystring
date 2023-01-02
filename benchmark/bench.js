@@ -59,7 +59,7 @@ const benchmarks = [
   {
     type: "stringify",
     name: "{ id: 1e+22 }",
-    input: { id: 1e+22 },
+    input: { id: 1e22 },
   },
   {
     type: "stringify",

@@ -4,9 +4,8 @@ import { qsNoMungeTestCases, qsTestCases, qsWeirdObjects } from "./node";
 import querystring from "querystring";
 
 test("should succeed on node.js tests", () => {
-  qsWeirdObjects.forEach(
-    (t) =>
-      assert.deepEqual(qs.parse(t[1] as string), t[2] as Record<string, any>),
+  qsWeirdObjects.forEach((t) =>
+    assert.deepEqual(qs.parse(t[1] as string), t[2] as Record<string, any>),
   );
   qsNoMungeTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[1]));
   qsTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[2]));
@@ -14,8 +13,8 @@ test("should succeed on node.js tests", () => {
 
 test("native querystring module should match the test suite result", () => {
   qsTestCases.forEach((t) => assert.deepEqual(querystring.parse(t[0]), t[2]));
-  qsNoMungeTestCases.forEach(
-    (t) => assert.deepEqual(querystring.parse(t[0]), t[1]),
+  qsNoMungeTestCases.forEach((t) =>
+    assert.deepEqual(querystring.parse(t[0]), t[1]),
   );
 });
 
