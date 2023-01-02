@@ -40,7 +40,7 @@
     "querystringparser": "^0.1.1",
     "rome": "11.0.0",
     "simple-git": "^3.14.1",
-    "vitest": "^0.23.4"
+    "vitest": "^0.26.3"
   },
   "repository": {
     "url": "git+https://github.com/anonrig/fast-querystring.git",
