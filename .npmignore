@@ -6,3 +6,5 @@ benchmark
 .idea
 .github
 rome.json
+scripts
+test_interop
