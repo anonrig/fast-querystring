@@ -1,0 +1,64 @@
+name: Typescript Interop
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  ts-interop-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        package-json-type:
+          - commonjs
+          - module
+        tsconfig-json-module:
+          - CommonJS
+          - ESNext
+          - Node16
+          - Nodenext
+        tsconfig-json-module-resolution:
+          - Node
+          - Node16
+          - Nodenext
+        exclude:
+          - package-json-type: commonjs
+            tsconfig-json-module: ESNext
+          - package-json-type: module
+            tsconfig-json-module: CommonJS
+          - package-json-type: module
+            tsconfig-json-module: Node16
+            tsconfig-json-module-resolution: Node
+          - package-json-type: module
+            tsconfig-json-module: NodeNext
+            tsconfig-json-module-resolution: Node
+
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: |
+          npm install --ignore-scripts &&
+          npm link &&
+          node scripts/create-ts-interop-test &&
+          cd test_interop &&
+          npm i --ignore-scripts &&
+          npm link fast-querystring &&
+          npm run test-interop
+        env:
+          PACKAGE_JSON_TYPE: ${{ matrix.package-json-type }}
+          TSCONFIG_MODULE: ${{ matrix.tsconfig-json-module }}
+          TSCONFIG_MODULE_RESOLUTION: ${{ matrix.tsconfig-json-module-resolution }}

@@ -2,9 +2,8 @@
   "name": "fast-querystring",
   "version": "1.0.0",
   "description": "A fast alternative to legacy querystring module",
-  "main": "lib/index.js",
-  "type": "commonjs",
-  "types": "lib/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "format": "rome format . --write",
     "format:ci": "rome ci .",
