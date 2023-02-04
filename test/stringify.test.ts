@@ -27,6 +27,10 @@ test("should handle numbers", () => {
   );
 });
 
+test("should handle mixed ascii and non-ascii", () => {
+  assert.deepEqual(qs.stringify({ name: "Jöhn Doe" }), "name=J%C3%B6hn%20Doe");
+});
+
 test("should handle BigInt", () => {
   assert.deepEqual(
     qs.stringify({ age: BigInt(55), name: "John" }),
