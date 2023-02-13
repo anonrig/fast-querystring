@@ -35,5 +35,11 @@ jobs:
       - name: Install dependencies
         run: npm install --ignore-scripts
 
-      - name: Test
+      - name: Test (Node.js)
         run: npm test
+
+      - name: Test (Edge Runtime)
+        run: npm run test:environment:edge
+
+      - name: Test (Browser)
+        run: npm run test:environment:browser
