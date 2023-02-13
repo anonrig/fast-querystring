@@ -75,17 +75,38 @@ console.log(qs.stringify({ foo: ['bar', 'baz'] }))
 ╔══════════════════════════════╤═════════╤═══════════════════╤═══════════╗
 ║ Slower tests                 │ Samples │            Result │ Tolerance ║
 ╟──────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ query-string                 │   10000 │  310383.60 op/sec │  ± 1.14 % ║
-║ qs                           │   10000 │  354332.59 op/sec │  ± 1.23 % ║
-║ @aws-sdk/querystring-builder │   10000 │  411500.38 op/sec │  ± 1.30 % ║
-║ http-querystring-stringify   │    1500 │  535883.47 op/sec │  ± 1.00 % ║
-║ URLSearchParams              │   10000 │  594068.52 op/sec │  ± 1.61 % ║
-║ querystringparser            │   10000 │  766081.64 op/sec │  ± 2.18 % ║
-║ querystringify               │   10000 │  914083.38 op/sec │  ± 1.67 % ║
-║ node:querystring             │    4000 │ 1822536.85 op/sec │  ± 0.91 % ║
+║ query-string                 │   10000 │  286850.93 op/sec │  ± 1.28 % ║
+║ qs                           │   10000 │  349458.21 op/sec │  ± 1.47 % ║
+║ @aws-sdk/querystring-builder │   10000 │  393736.38 op/sec │  ± 1.78 % ║
+║ URLSearchParams              │    1000 │  402765.87 op/sec │  ± 0.57 % ║
+║ http-querystring-stringify   │   10000 │  535008.72 op/sec │  ± 2.33 % ║
+║ querystringparser            │   10000 │  541710.81 op/sec │  ± 2.46 % ║
+║ querystringify               │   10000 │  680866.27 op/sec │  ± 3.09 % ║
+║ querystringify-ts            │   10000 │  823101.36 op/sec │  ± 2.78 % ║
+║ node:querystring             │    1500 │ 1065264.49 op/sec │  ± 0.88 % ║
 ╟──────────────────────────────┼─────────┼───────────────────┼───────────╢
 ║ Fastest test                 │ Samples │            Result │ Tolerance ║
 ╟──────────────────────────────┼─────────┼───────────────────┼───────────╢
-║ fast-querystring             │   10000 │ 2186435.62 op/sec │  ± 3.48 % ║
+║ fast-querystring             │   10000 │ 1903529.51 op/sec │  ± 5.96 % ║
 ╚══════════════════════════════╧═════════╧═══════════════════╧═══════════╝
+```
+
+- Importing package.
+
+```
+> node benchmark/import.mjs
+
+╔═════════════════════════════╤═════════╤═════════════════╤═══════════╗
+║ Slower tests                │ Samples │          Result │ Tolerance ║
+╟─────────────────────────────┼─────────┼─────────────────┼───────────╢
+║ @aws-sdk/querystring-parser │    1000 │  8675.34 op/sec │  ± 0.41 % ║
+║ querystringparser           │    1000 │  9580.93 op/sec │  ± 0.75 % ║
+║ querystringify              │    1000 │  9641.84 op/sec │  ± 0.51 % ║
+║ qs                          │    1000 │  9840.70 op/sec │  ± 0.79 % ║
+║ query-string                │    2000 │ 10958.10 op/sec │  ± 0.86 % ║
+╟─────────────────────────────┼─────────┼─────────────────┼───────────╢
+║ Fastest test                │ Samples │          Result │ Tolerance ║
+╟─────────────────────────────┼─────────┼─────────────────┼───────────╢
+║ fast-querystring            │    1500 │ 36919.26 op/sec │  ± 0.94 % ║
+╚═════════════════════════════╧═════════╧═════════════════╧═══════════╝
 ```

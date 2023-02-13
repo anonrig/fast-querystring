@@ -1,5 +1,7 @@
 import benchmark from "cronometro";
 
+// "node:querystring" module is omitted from this benchmark because
+// it will always be faster than alternatives because of V8 snapshots.
 await benchmark(
   {
     qs() {
@@ -7,9 +9,6 @@ await benchmark(
     },
     "fast-querystring"() {
       return import("../lib/index.js");
-    },
-    "node:querystring"() {
-      return import("node:querystring");
     },
     "query-string"() {
       return import("query-string");

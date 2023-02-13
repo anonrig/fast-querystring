@@ -7,6 +7,7 @@ import querystringify from "querystringify";
 import httpQuerystringStringify from "http-querystring-stringify";
 import awsQueryStringBuilder from "@aws-sdk/querystring-builder";
 import querystringparser from "querystringparser";
+import querystringifyQs from "querystringify-ts";
 
 const value = {
   frappucino: "muffin",
@@ -47,6 +48,9 @@ await benchmark(
     },
     querystringparser() {
       return querystringparser.stringify(value);
+    },
+    "querystringify-ts"() {
+      return querystringifyQs.stringify(value);
     },
   },
   { warmup: true },
