@@ -36,7 +36,7 @@
     "cli-select": "^1.1.2",
     "cronometro": "^1.1.5",
     "http-querystring-stringify": "^2.1.0",
-    "jsdom": "^21.1.0",
+    "jsdom": "^22.1.0",
     "qs": "^6.11.1",
     "query-string": "^8.1.0",
     "querystringify": "^2.2.0",
