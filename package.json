@@ -3,6 +3,7 @@
   "version": "1.1.2",
   "description": "A fast alternative to legacy querystring module",
   "main": "./lib/index.js",
+  "type": "commonjs",
   "types": "./lib/index.d.ts",
   "scripts": {
     "format": "rome format . --write",
