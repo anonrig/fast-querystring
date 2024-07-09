@@ -1,11 +1,11 @@
+import native from "node:querystring";
+import awsQueryStringParser from "@aws-sdk/querystring-parser";
 import benchmark from "cronometro";
 import qs from "qs";
-import fastQueryString from "../lib/index.js";
-import native from "node:querystring";
 import queryString from "query-string";
 import querystringify from "querystringify";
-import awsQueryStringParser from "@aws-sdk/querystring-parser";
 import querystringparser from "querystringparser";
+import fastQueryString from "../lib/index.js";
 
 const input = "frappucino=muffin&goat=scone&pond=moose&foo=bar&foo=baz";
 

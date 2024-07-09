@@ -1,13 +1,13 @@
-import benchmark from "cronometro";
-import qs from "qs";
-import fastQueryString from "../lib/index.js";
 import native from "node:querystring";
+import awsQueryStringBuilder from "@aws-sdk/querystring-builder";
+import benchmark from "cronometro";
+import httpQuerystringStringify from "http-querystring-stringify";
+import qs from "qs";
 import queryString from "query-string";
 import querystringify from "querystringify";
-import httpQuerystringStringify from "http-querystring-stringify";
-import awsQueryStringBuilder from "@aws-sdk/querystring-builder";
-import querystringparser from "querystringparser";
 import querystringifyQs from "querystringify-ts";
+import querystringparser from "querystringparser";
+import fastQueryString from "../lib/index.js";
 
 const value = {
   frappucino: "muffin",

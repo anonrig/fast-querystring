@@ -1,5 +1,3 @@
-"use strict";
-
 const { spawn } = require("node:child_process");
 
 const cliSelect = require("cli-select");
@@ -56,7 +54,7 @@ function parseBenchmarksStdout(text) {
       results.push({
         name: match[1],
         alignedName: match[1] + match[2],
-        result: parseInt(match[3].split(",").join("")),
+        result: Number.parseInt(match[3].split(",").join("")),
       });
     }
   }
@@ -90,7 +88,7 @@ function compareResults(featureBranch, mainBranch) {
   }
 }
 
-(async function () {
+(async () => {
   const branches = await git.branch();
   const currentBranch = branches.branches[branches.current];
 

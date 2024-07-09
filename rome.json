@@ -1,9 +1,0 @@
-{
-  "formatter": {
-    "indentStyle": "space",
-    "indentSize": 2
-  },
-  "linter": {
-    "enabled": false
-  }
-}

@@ -1,5 +1,3 @@
-"use strict";
-
 const path = require("node:path");
 const { Worker } = require("node:worker_threads");
 
@@ -69,7 +67,7 @@ const benchmarks = [
   {
     type: "stringify",
     name: "{ id: Infinity }",
-    input: { id: Infinity },
+    input: { id: Number.POSITIVE_INFINITY },
   },
   {
     type: "stringify",
