@@ -117,7 +117,7 @@ export const qsTestCases = [
 ];
 export const qsWeirdObjects = [
   [{ regexp: /./g }, "regexp=", { regexp: "" }],
-  [{ regexp: new RegExp(".", "g") }, "regexp=", { regexp: "" }],
+  [{ regexp: /./g }, "regexp=", { regexp: "" }],
   [{ fn: () => {} }, "fn=", { fn: "" }],
   [{ fn: new Function("") }, "fn=", { fn: "" }],
   [{ math: Math }, "math=", { math: "" }],
@@ -127,8 +127,8 @@ export const qsWeirdObjects = [
   [{ f: new Boolean(false), t: new Boolean(true) }, "f=&t=", { f: "", t: "" }],
   [{ f: false, t: true }, "f=false&t=true", { f: "false", t: "true" }],
   [{ n: null }, "n=", { n: "" }],
-  [{ nan: NaN }, "nan=", { nan: "" }],
-  [{ inf: Infinity }, "inf=", { inf: "" }],
+  [{ nan: Number.NaN }, "nan=", { nan: "" }],
+  [{ inf: Number.POSITIVE_INFINITY }, "inf=", { inf: "" }],
   [{ a: [], b: [] }, "", {}],
   [{ a: 1, b: [] }, "a=1", { a: "1" }],
 ];

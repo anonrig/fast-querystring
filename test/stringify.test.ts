@@ -1,11 +1,14 @@
-import { qsNoMungeTestCases, qsTestCases, qsWeirdObjects } from "./node";
-import qs from "../lib";
-import { test, assert } from "vitest";
 import querystring from "querystring";
+import { assert, test } from "vitest";
+import qs from "../lib";
+import { qsNoMungeTestCases, qsTestCases, qsWeirdObjects } from "./node";
 
 test("should succeed on node.js tests", () => {
   qsWeirdObjects.forEach((t) =>
-    assert.deepEqual(qs.stringify(t[2] as Record<string, any>), t[1] as string),
+    assert.deepEqual(
+      qs.stringify(t[2] as Record<string, unknown>),
+      t[1] as string,
+    ),
   );
   qsNoMungeTestCases.forEach((t) => assert.deepEqual(qs.stringify(t[1]), t[0]));
   qsTestCases.forEach((t) => assert.deepEqual(qs.stringify(t[2]), t[1]));
@@ -55,7 +58,7 @@ test("should omit objects", () => {
 });
 
 test("should omit non-object inputs", () => {
-  assert.deepEqual(qs.stringify("hello" as any), "");
+  assert.deepEqual(qs.stringify("hello" as never), "");
 });
 
 test("should handle utf16 characters", () => {
@@ -89,15 +92,15 @@ test("should coerce numbers to string", () => {
   assert.strictEqual(qs.stringify({ foo: -0 }), "foo=0");
   assert.strictEqual(qs.stringify({ foo: 3 }), "foo=3");
   assert.strictEqual(qs.stringify({ foo: -72.42 }), "foo=-72.42");
-  assert.strictEqual(qs.stringify({ foo: NaN }), "foo=");
+  assert.strictEqual(qs.stringify({ foo: Number.NaN }), "foo=");
   assert.strictEqual(qs.stringify({ foo: 1e21 }), "foo=1e%2B21");
-  assert.strictEqual(qs.stringify({ foo: Infinity }), "foo=");
+  assert.strictEqual(qs.stringify({ foo: Number.POSITIVE_INFINITY }), "foo=");
 });
 
 test("should return empty string on certain inputs", () => {
-  assert.strictEqual(qs.stringify(), "");
-  assert.strictEqual(qs.stringify(0), "");
+  assert.strictEqual(qs.stringify(undefined as never), "");
+  assert.strictEqual(qs.stringify(0 as never), "");
   assert.strictEqual(qs.stringify([]), "");
-  assert.strictEqual(qs.stringify(null), "");
-  assert.strictEqual(qs.stringify(true), "");
+  assert.strictEqual(qs.stringify(null as never), "");
+  assert.strictEqual(qs.stringify(true as never), "");
 });

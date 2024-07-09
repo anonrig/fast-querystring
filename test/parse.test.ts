@@ -1,11 +1,11 @@
-import qs from "../lib";
-import { test, assert } from "vitest";
-import { qsNoMungeTestCases, qsTestCases, qsWeirdObjects } from "./node";
 import querystring from "querystring";
+import { assert, test } from "vitest";
+import qs from "../lib";
+import { qsNoMungeTestCases, qsTestCases, qsWeirdObjects } from "./node";
 
 test("should succeed on node.js tests", () => {
   qsWeirdObjects.forEach((t) =>
-    assert.deepEqual(qs.parse(t[1] as string), t[2] as Record<string, any>),
+    assert.deepEqual(qs.parse(t[1] as string), t[2] as Record<string, unknown>),
   );
   qsNoMungeTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[1]));
   qsTestCases.forEach((t) => assert.deepEqual(qs.parse(t[0]), t[2]));

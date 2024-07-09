@@ -1,5 +1,3 @@
-"use strict";
-
 const { workerData: benchmark, parentPort } = require("node:worker_threads");
 
 const Benchmark = require("benchmark");
