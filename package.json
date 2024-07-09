@@ -7,7 +7,6 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "format": "biome check . --write",
-    "format:ci": "rome check .",
     "test": "vitest",
     "test:environment:edge": "vitest --environment=edge-runtime",
     "test:environment:browser": "vitest --environment=jsdom",
