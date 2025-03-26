@@ -3,6 +3,7 @@
 ![Test](https://github.com/anonrig/fast-querystring/workflows/test/badge.svg)
 [![codecov](https://codecov.io/gh/anonrig/fast-querystring/branch/main/graph/badge.svg?token=4ZDJA2BMOH)](https://codecov.io/gh/anonrig/fast-querystring)
 [![NPM version](https://img.shields.io/npm/v/fast-querystring.svg?style=flat)](https://www.npmjs.com/package/fast-querystring)
+[![libs.tech recommends](https://libs.tech/project/532342875/badge.svg)](https://libs.tech/project/532342875/fast-querystring)
 
 Fast query-string parser and stringifier to replace the legacy `node:querystring` module.
 
