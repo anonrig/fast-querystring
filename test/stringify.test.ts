@@ -97,6 +97,13 @@ test("should coerce numbers to string", () => {
   assert.strictEqual(qs.stringify({ foo: Number.POSITIVE_INFINITY }), "foo=");
 });
 
+test("should skip empty array values without leaving stray separators", () => {
+  assert.strictEqual(qs.stringify({ a: [], b: "1" }), "b=1");
+  assert.strictEqual(qs.stringify({ a: "1", b: [] }), "a=1");
+  assert.strictEqual(qs.stringify({ a: "1", b: [], c: "2" }), "a=1&c=2");
+  assert.strictEqual(qs.stringify({ a: [] }), "");
+});
+
 test("should return empty string on certain inputs", () => {
   assert.strictEqual(qs.stringify(undefined as never), "");
   assert.strictEqual(qs.stringify(0 as never), "");
