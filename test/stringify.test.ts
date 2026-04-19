@@ -76,6 +76,10 @@ test("invalid surrogate pair should throw", () => {
   assert.throws(() => qs.stringify({ foo: "\udc00" }), "URI malformed");
 });
 
+test("high surrogate followed by non-surrogate should throw", () => {
+  assert.throws(() => qs.stringify({ foo: "a\ud800b" }), "URI malformed");
+});
+
 test("should omit nested values", () => {
   const f = qs.stringify({
     a: "b",
