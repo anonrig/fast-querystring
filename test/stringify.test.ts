@@ -94,6 +94,7 @@ test("should coerce numbers to string", () => {
   assert.strictEqual(qs.stringify({ foo: -72.42 }), "foo=-72.42");
   assert.strictEqual(qs.stringify({ foo: Number.NaN }), "foo=");
   assert.strictEqual(qs.stringify({ foo: 1e21 }), "foo=1e%2B21");
+  assert.strictEqual(qs.stringify({ foo: -1e21 }), "foo=-1e%2B21");
   assert.strictEqual(qs.stringify({ foo: Number.POSITIVE_INFINITY }), "foo=");
 });
 
