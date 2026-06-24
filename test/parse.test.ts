@@ -60,3 +60,26 @@ test("should parse large numbers", () => {
     "918854443121279438895193",
   );
 });
+
+test("matches node:querystring on invalid UTF-8 escapes in values", () => {
+  // Syntactically valid escapes that are not valid UTF-8. node:querystring
+  // substitutes U+FFFD; it never returns the raw "%XX" text.
+  for (const input of [
+    "a=%C3",
+    "a=%ff",
+    "a=%80",
+    "a=%E4%B8",
+    "a=%F0%9F%98",
+    "a=%ED%A0%80",
+    "a=%C0%80",
+    "a=%C3%A9%E4%B8", // valid then invalid in the same value
+  ]) {
+    assert.deepEqual(qs.parse(input), querystring.parse(input), input);
+  }
+});
+
+test("matches node:querystring on invalid UTF-8 escapes in keys", () => {
+  for (const input of ["%C3=x", "%ff=x", "%E4%B8=x"]) {
+    assert.deepEqual(qs.parse(input), querystring.parse(input), input);
+  }
+});
